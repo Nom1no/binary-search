@@ -4,13 +4,13 @@ target = 11
 function find(Arr, a) {
   let start = 0
   let stop = Arr.length
-  for( let i = start ; i <= stop ; i++ ) {
+  for( let i = start ; i <= Arr.length ; i++ ) {
     let index = (Math.round((stop - start)/2)) + start;
     let diff = target - Arr[ index ]
     
     if(diff === 0) return index;
     
-    if(start === stop) return(-1)
+    if(start === stop || start > stop) return(-1)
     
     if( diff > 0) {
       start = index+1;
